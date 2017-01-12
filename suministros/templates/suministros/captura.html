@@ -1,0 +1,9 @@
+{% extends 'suministros/sum_header.html' %}
+{% block content %}
+    <h2 class="text-center">Capturar artículos</h2>
+    <form action="create-articulo" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" name="" value="Save">
+    </form>
+{% endblock %}
