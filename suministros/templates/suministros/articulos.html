@@ -1,0 +1,15 @@
+{% extends 'suministros/sum_header.html' %}
+{% block content %}
+<table class="table table-striped">
+    <tr>
+        <th>Articulo</th>
+        <th>Tipo</th>
+    </tr>
+    {% for a in articulos %}
+        <tr>
+            <td>{{ a.articulo }}</td>
+            <td>{{ a.tipo }}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

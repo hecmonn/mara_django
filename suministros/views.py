@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from .forms import ArticuloForm
+from .models import Articulos
 
 def index(request):
     return render(request,'suministros/index.html')
@@ -8,6 +9,9 @@ def index(request):
 def captura(request):
     return render(request,'suministros/captura.html',{'form':ArticuloForm})
 
+def articulos(request):
+    articles=Articulos.objects.all()
+    return render(request,'suministros/articulos.html',{'articulos':articles})
 #forms
 def create_articulo(request):
     if request.method=='POST':
