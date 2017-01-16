@@ -9,9 +9,7 @@ class Articulos(models.Model):
         ('limpieza','Limpieza'),
     )
     created_date=models.DateField(auto_now=True)
-    sucursal=models.ForeignKey(sid)
     tipo=models.CharField(max_length=50,choices=TYPE_CHOICES)
-
     def __str__(self):
         return self.articulo
 
