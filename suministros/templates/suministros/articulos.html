@@ -4,12 +4,14 @@
     <tr>
         <th>Articulo</th>
         <th>Tipo</th>
+        <th>Opciones</th>
     </tr>
     {% for a in articulos %}
-        <tr>
-            <td>{{ a.articulo }}</td>
-            <td>{{ a.tipo }}</td>
-        </tr>
+    <tr>
+        <td>{{ a.articulo|title }}</td>
+        <td>{{ a.tipo|title }}</td>
+        <td><a id="{{ a.id }}">Eliminar</a></td>
+    </tr>
     {% endfor %}
 </table>
 {% endblock %}

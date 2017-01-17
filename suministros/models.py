@@ -10,11 +10,12 @@ class Articulos(models.Model):
     )
     created_date=models.DateField(auto_now=True)
     tipo=models.CharField(max_length=50,choices=TYPE_CHOICES)
+    cantidad=models.PositiveSmallIntegerField(0)
     def __str__(self):
         return self.articulo
 
 class Pedidos(models.Model):
     suc=models.ForeignKey(sid)
     articulo=models.ForeignKey(Articulos)
-    cantidad=models.PositiveSmallIntegerField(0)
+    cantidad=models.PositiveSmallIntegerField(default=0)
     created_date=models.DateTimeField(auto_now=True)
