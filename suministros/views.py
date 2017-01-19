@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse,HttpResponseRedirect
+from django.http import HttpResponse,HttpResponseRedirect,HttpRequest
 from .forms import ArticuloForm
 from .models import Articulos
 
@@ -16,10 +16,12 @@ def articulos(request):
 def create_articulo(request):
     if request.method=='POST':
         form=ArticuloForm(request.POST)
+        gastos=request.POST.get('cantidad[]')
+        print gastos
         if form.is_valid():
             nf=form.save(commit=False)
-            nf.sucursal_id=1
-            nf.save()
+            #nf.sucursal_id=1
+            #nf.save(commit=False)
             return HttpResponseRedirect('/suministros')
     else:
         form=ArticuloForm()

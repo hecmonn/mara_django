@@ -1,5 +1,24 @@
 {% extends 'rh/header.html' %}
 {% block content %}
-<a href="empleados_captura" class="btn btn-md btn-default pull-right">Nuevo empleado</a>
-
+<div class="col-md-8 col-md-offset-2">
+    <a href="empleados_captura" class="btn btn-md btn-default pull-right">Nuevo empleado</a><br><br>
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Sucursal</th>
+            <th>Puesto</th>
+            <th>Estado</th>
+        </tr>
+        {% for e in empleados %}
+        <tr>
+            <td>{{e.id}}</td>
+            <td>{{e.nombre|title}}</td>
+            <td>{{e.sucursal}}</td>
+            <td>{{e.puesto|title}}</td>
+            <td>{{e.estado}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
 {% endblock %}

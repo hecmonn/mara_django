@@ -1,0 +1,116 @@
+{% extends 'sucursales/header.html' %}
+
+{% block content %}
+    <form action="av-create" method="post">
+        <div class="col-md-12">
+            {{form.ticket1.label_tag }}
+            {{form.ticket1}}
+            {{form.ticket2.label_tag }}
+            {{form.ticket2}}
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Tarjetas</h3>
+                    {{form.bmx.label_tag}}
+                    <div class="input-group">
+				        <div class="input-group-addon">$</div>
+                        {{form.bmx}}
+			        </div><br>
+                    {{form.bbjio.label_tag}}
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        {{form.bbjio}}
+                    </div><br>
+                    {{form.amex.label_tag}}
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        {{form.amex}}
+                    </div><br>
+                    {{form.scotia_bank.label_tag}}
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        {{form.scotia_bank}}
+                    </div><br>
+                    {{form.santander.label_tag}}
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        {{form.santander}}
+                    </div><br>
+                </div>
+                <div class="col-md-4">
+                    <h3>Formas de pago</h3>
+                    {{form.money_card.label_tag}}
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        {{form.money_card}}
+                    </div><br>
+                    {{form.univale.label_tag}}
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        {{form.univale}}
+                    </div><br>
+                    {{form.coppel.label_tag}}
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        {{form.coppel}}
+                    </div><br>
+                    {{form.coupon_cloud.label_tag}}
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        {{form.coupon_cloud}}
+                    </div><br>
+                    {{form.vales_caja.label_tag}}
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        {{form.vales_caja}}
+                    </div><br>
+                </div>
+                <div class="col-md-4">
+                    <h3>Totales</h3>
+                    {{form.efectivo.label_tag}}
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        {{form.efectivo}}
+                    </div><br>
+                    {{form.dolares.label_tag}}
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        {{form.dolares}}
+                    </div><br>
+                    {{form.tot_tarjetas.label_tag}}
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        {{form.tot_tarjetas}}
+                    </div><br>
+                    {{form.fondo.label_tag}}
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        {{form.fondo}}
+                    </div><br>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h3>Gastos</h3>
+                <table class="table table-striped" id="gastos">
+    				<tr>
+    					<th>Descripcion</th>
+    					<th>Cantidad</th>
+    					<th></th>
+    				</tr>
+    				<tr>
+    					<!--<td><input type="text" name="descr[]" class="form-control"></td>
+    					<td><div class="input-group">
+    						<div class="input-group-addon">$</div>
+    						<input type="text" name="cantidad[]" class="form-control gas">
+    					</div></td>-->
+                        <td>{{formg.descripcion}}</td>
+    					<td><button type="button" id="add" class="btn btn-success">+</button></td>
+    				</tr>
+    			</table>
+            </div>
+        </div>
+
+        <input type="submit" class="btn btn-md btn-success" value="Capturar">
+    </form>
+{% endblock %}

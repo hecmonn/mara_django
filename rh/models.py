@@ -51,6 +51,10 @@ class Empleados(models.Model):
         (0,'Mujer'),
         (1,'Hombre')
     )
+    ESTADO_CHOICES=(
+        (0,'Inactivo'),
+        (1,'Activo')
+    )
     PUESTO_CHOICES=(
         ('recursos humanos','Recurso Humanos'),
         ('informatica','Informatica'),
@@ -69,10 +73,10 @@ class Empleados(models.Model):
     imss=models.CharField(max_length=50)
     no_imss=models.CharField(max_length=50)
     bod=models.DateField(auto_now=False,auto_now_add=False)
-    sexo=models.BooleanField(default=0)
+    sexo=models.BooleanField(default=0,choices=SEX_CHOICES)
     ingreso=models.DateField(auto_now=True)
     salida=models.DateField(auto_now_add=True)
-    estado=models.BooleanField(default=1,choices=SEX_CHOICES)
+    estado=models.BooleanField(default=1,choices=ESTADO_CHOICES)
     puesto=models.CharField(max_length=100,choices=PUESTO_CHOICES)
     sueldo=models.DecimalField(max_digits=10,decimal_places=2)
     direccion=models.CharField(max_length=249)
@@ -81,4 +85,4 @@ class Empleados(models.Model):
     sucursal=models.ForeignKey(Sucursales)
 
     def __str__(self):
-        return self.nombre
+        return self.nombre.capitalize()

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Iniciar sesión | Mara</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="col-md-4 col-md-offset-4">
+            <form action="login" method="post">{% csrf_token %}
+                <h2 class="text-center">Mara Sucursales</h2>
+                <input type="text" name="username" placeholder="Usuario" class="form-control"><br>
+                <input type="password" name="password" placeholder="Contraseña" class="form-control"><br>
+                <input type="submit" name="" value="Ingresar" class="btn btn-md btn-success center-block">
+            </form>
+        </div>
+    </body>
+</html>

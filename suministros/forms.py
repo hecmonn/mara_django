@@ -1,4 +1,4 @@
-from django.forms import ModelForm
+from django.forms import ModelForm,modelformset_factory
 from django.db.models import CharField
 from .models import Articulos
 
@@ -10,3 +10,7 @@ class ArticuloForm(ModelForm):
     class Meta:
         model=Articulos
         fields=['articulo','tipo']
+
+class ArticuloFormset(ModelForm):
+    pass
+    #articulo=modelformset_factory(Articulos,exclude=())

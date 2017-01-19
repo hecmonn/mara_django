@@ -3,7 +3,9 @@
     <h2 class="text-center">Capturar artículos</h2>
     <form action="create-articulo" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form }}
+        <input type="text" name="cantidad[]" value="">
+        <input type="text" name="cantidad[]" value="">
         <input type="submit" name="" value="Save">
     </form>
 {% endblock %}

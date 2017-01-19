@@ -1,4 +1,9 @@
 {% extends 'rh/header.html' %}
 {% block content %}
-    {{ form.nombre }}
+<div class="col-md-8 col-md-offset-2">
+    <form action="empleado_create" method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-md btn-default center-block" value="Crear">
+    </form>
+</div>
 {% endblock %}
