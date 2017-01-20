@@ -88,6 +88,11 @@ DATABASES = {
     }
 }
 
+#Login django system
+from django.core.urlresolvers import reverse_lazy
+LOGIN_URL= reverse_lazy('login')
+LOGIN_REDIRECT_URL=reverse_lazy('login_resolver')
+LOGOUT_URL=reverse_lazy('logout')
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

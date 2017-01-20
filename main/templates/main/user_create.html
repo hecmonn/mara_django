@@ -1,0 +1,7 @@
+{% extends 'main/header.html' %}
+{% block content %}
+<form action="usuario-nuevo" method="post">{% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Guardar" class="btn btn-md btn-success">
+</form>
+{% endblock %}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Admin</title>
+    </head>
+    <body>
+        <h2>Admin</h2>
+        {% if session_message %}<h2>{{session_message}}{% endif %}
+        {% block content %}
+
+        {% endblock %}
+    </body>
+</html>

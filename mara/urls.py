@@ -18,12 +18,16 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls import url,include
 from django.contrib import admin
+from django.contrib.auth.views import login
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^recursos-humanos/', include('rh.urls')),
     url(r'^suministros/', include('suministros.urls')),
     url(r'^sucursales/', include('sucursales.urls')),
+    url(r'^main/',include('main.urls')),
+    url(r'^$',login,{'template_name':'main/login.html'},name='login'),
+    #url(r'^logout$','',{'template_name':'main/login.html'},name='logout')
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
